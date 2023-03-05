@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:khalti_clone/main.dart';
 
+import '../components/big_container.dart';
 import '../components/my_app_bar.dart';
 import 'events_page.dart';
 
@@ -47,6 +48,20 @@ class DashBoard extends StatelessWidget {
           ),
         ),
         //text---"Recharge and bill paymets"
+        Container(
+          color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               SizedBox(height: 20,),
+               Text("Recharge and bill paymets",),
+               SizedBox(height: 20,),
+              BigContainer()
+              
+              // Container(child: BigContainer()),
+            ],
+          ),
+        ),
         //lots of icons containing box
       ],
     ));
