@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:khalti_clone/components/icon_box.dart';
 import 'package:khalti_clone/main.dart';
 
 import '../components/big_container.dart';
@@ -9,6 +10,13 @@ import 'events_page.dart';
 
 class DashBoard extends StatelessWidget {
   // const DashBoard({super.key});
+
+  List iconsList1 = [
+    ["lib/images/Topup.png", "Topup"],
+    ["lib/images/bulb.png", "electricity"],
+    ["lib/images/tap.png", "Khanepani"],
+    ["lib/images/in-love.png", "eSewa Care"],
+    ["lib/images/internet.png", "Internet"],];
  
 
   @override
@@ -54,15 +62,70 @@ class DashBoard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
                SizedBox(height: 20,),
-               Text("Recharge and bill paymets",),
+               Padding(
+                 padding: const EdgeInsets.symmetric(horizontal:10.0,vertical:3),
+                 child: Text("Recharge & Bill Paymets",
+                 style: TextStyle(fontWeight: FontWeight.bold),),
+               ),
                SizedBox(height: 20,),
-              BigContainer()
+               //-------------------lots of icons containing box------------------
+              BigContainer(),
+              //instead of sized box to give color
+             Container(color: Colors.grey[300],
+             height: 10,),
+
+             //-----------one card----------------------- 
+             Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(4)),
               
-              // Container(child: BigContainer()),
+              child: ClipRRect(borderRadius: BorderRadius.circular(10),child: Image.asset("lib/images/card.jpg")),
+             ),
+
+             //instead of sized box to give color
+             Container(color: Colors.grey[300],
+             height: 10,),
+
+             
+              
+              //--------------listview horizontally scrollable-------
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:10.0,vertical:3),
+                child: Text("Featured Services",
+                style: TextStyle(fontWeight: FontWeight.bold),),
+
+
+              ),
+              Container(
+                height:80,
+                
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: iconsList1.length,
+                  itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    width: 100,
+                    height: 100,
+                    
+                    
+                    child: IconBox(icon_name: iconsList1[index][1],icon: iconsList1[index][0],));
+                 
+                },),
+              ),
+
+
+              //instead of sized box to give color
+             Container(color: Colors.grey[300],
+             height: 10,),
+
+             //--------------scrollable card horizontally-----------------
+            
             ],
           ),
         ),
-        //lots of icons containing box
+        
       ],
     ));
   }
