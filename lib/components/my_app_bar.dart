@@ -8,14 +8,14 @@ class MyAppBar extends StatefulWidget {
 }
 
 class _MyAppBarState extends State<MyAppBar> {
-
-  bool isShow=true;
+  bool isShow = true;
 
   void ShowNum() {
     setState(() {
       isShow = !isShow;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -59,13 +59,42 @@ class _MyAppBarState extends State<MyAppBar> {
                       Icon(
                         Icons.search,
                         color: Colors.white,
+                        size: 29,
                       ),
-                      SizedBox(width: 12,),
-                      Icon(
-                        Icons.gif_box,
-                        color: Colors.pink,
+                      SizedBox(
+                        width: 12,
                       ),
-                      SizedBox(width: 12,),
+                      Stack(children: [
+                        Container(
+                          width: 30,
+                          height: 32,
+                          
+                        ),
+                        Positioned(
+                          left: 1,
+                          top: 3,
+                          child: Container(
+                            height: 29,
+                            width: 30,
+                            child: Image.asset(
+                              "lib/images/giftbox.png",
+                              fit: BoxFit.cover,
+                              color: Color.fromARGB(255, 245, 75, 132),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                            top: 14,
+                            left: 9.5,
+                            child: Text(
+                              "%",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 14),
+                            ))
+                      ]),
+                      SizedBox(
+                        width: 12,
+                      ),
                       Icon(
                         Icons.notifications_outlined,
                         size: 29,
@@ -110,36 +139,44 @@ class _MyAppBarState extends State<MyAppBar> {
                                             fontSize: 25,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                      isShow?Text("0",style: TextStyle(
-                                            color: Colors.purple,
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.bold),):
-                                            Text("XXX.XX",style: TextStyle(
-                                            color: Colors.purple,
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold
-
-                                            ),)
+                                      isShow
+                                          ? Text(
+                                              "0",
+                                              style: TextStyle(
+                                                  color: Colors.purple,
+                                                  fontSize: 25,
+                                                  fontWeight: FontWeight.bold),
+                                            )
+                                          : Text(
+                                              "XXX.XX",
+                                              style: TextStyle(
+                                                  color: Colors.purple,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold),
+                                            )
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 8,),
+                                SizedBox(
+                                  height: 8,
+                                ),
                                 Row(
                                   children: [
                                     GestureDetector(
                                       onTap: ShowNum,
-                                      child:isShow? Icon(
-                                        
-                                        Icons.remove_red_eye,
-                                        color: Colors.purple,
-                                      ):Icon(
-                      Icons.visibility_off_outlined,
-                      color: Colors.purple,
-                      
-                    ),
+                                      child: isShow
+                                          ? Icon(
+                                              Icons.remove_red_eye,
+                                              color: Colors.purple,
+                                            )
+                                          : Icon(
+                                              Icons.visibility_off_outlined,
+                                              color: Colors.purple,
+                                            ),
                                     ),
-                                    SizedBox(width: 10,),
-                                    
+                                    SizedBox(
+                                      width: 10,
+                                    ),
                                     Text(
                                       "Khalti Balance",
                                       style: TextStyle(color: Colors.purple),
@@ -169,7 +206,9 @@ class _MyAppBarState extends State<MyAppBar> {
                       ),
                     ],
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: 10,
+                  ),
                   Container(
                     width: 75,
                     height: 90,
@@ -187,7 +226,9 @@ class _MyAppBarState extends State<MyAppBar> {
                             color: Colors.purple,
                           ),
                         ),
-                        SizedBox(height: 15,),
+                        SizedBox(
+                          height: 15,
+                        ),
                         Text(
                           "Add money",
                           style: TextStyle(color: Colors.white),
@@ -195,7 +236,9 @@ class _MyAppBarState extends State<MyAppBar> {
                       ],
                     ),
                   ),
-                  SizedBox(width: 20,),
+                  SizedBox(
+                    width: 20,
+                  ),
                   Container(
                     height: 90,
                     width: 55,
@@ -215,9 +258,11 @@ class _MyAppBarState extends State<MyAppBar> {
                             color: Colors.purple,
                           ),
                         ),
-                        SizedBox(height: 9,),
+                        SizedBox(
+                          height: 9,
+                        ),
                         Text(
-                          " Send\nmoney",
+                          " Send money",
                           style: TextStyle(color: Colors.white),
                         )
                       ],
