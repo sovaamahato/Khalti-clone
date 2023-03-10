@@ -10,28 +10,28 @@ class BigContainer extends StatefulWidget {
 class _BigContainerState extends State<BigContainer> {
   //list of icons ---------------------------------
   List iconsList = [
-    ["lib/images/Topup.png", "Topup"],
-    ["lib/images/bulb.png", "electricity"],
-    ["lib/images/tap.png", "Khanepani"],
-    ["lib/images/in-love.png", "eSewa Care"],
-    ["lib/images/internet.png", "Internet"],
-    ["lib/images/aeroplane.png", "Airlines"],
-    ["lib/images/shelter.png", "Govt. Payment"],
-    ["lib/images/resort.png", "Hotels"],
-    ["lib/images/travel.png", "International Airlines"],
-    ["lib/images/cable-car.png", "Cable Car"],
-    ["lib/images/Topup.png", "Topup"],
-    ["lib/images/bulb.png", "electricity"],
-    ["lib/images/tap.png", "Khanepani"],
-    ["lib/images/in-love.png", "eSewa Care"],
-    ["lib/images/internet.png", "Internet"],
-    ["lib/images/aeroplane.png", "Airlines"],
-    ["lib/images/Topup.png", "Topup"],
-    ["lib/images/resort.png", "Hotels"],
-    ["lib/images/travel.png", "International Airlines"],
-    ["lib/images/cable-car.png", "Cable Car"],
-    ["lib/images/cable-car.png", "Cable Car"],
-    ["lib/images/Topup.png", "Topup"],
+    ["lib/images/Topup.png", "Topup","1-2% Cashback"],
+    ["lib/images/bulb.png", "electricity","",],
+    ["lib/images/internet.png", "Internet","1-3% Cashback"],
+    ["lib/images/tap.png", "Khanepani",""],
+    ["lib/images/in-love.png", "eSewa Care",""],
+    
+    ["lib/images/aeroplane.png", "Airlines","5% Cashback",],
+    ["lib/images/shelter.png", "Govt. Payment",""],
+    ["lib/images/resort.png", "Hotels",""],
+    ["lib/images/travel.png", "flight",""],
+    ["lib/images/cable-car.png", "Cable Car",""],
+    ["lib/images/Topup.png", "Topup",""],
+    ["lib/images/bulb.png", "electricity",""],
+    ["lib/images/tap.png", "Khanepani",""],
+    ["lib/images/in-love.png", "eSewa Care",""],
+    ["lib/images/internet.png", "Internet",""],
+    ["lib/images/aeroplane.png", "Airlines",""],
+    ["lib/images/Topup.png", "Topup",""],
+    ["lib/images/resort.png", "Hotels",""],
+    ["lib/images/travel.png", "International Airlines",""],
+    ["lib/images/cable-car.png", "Cable Car",""],
+    
   ];
 
   bool _showAll = false;
@@ -41,7 +41,7 @@ class _BigContainerState extends State<BigContainer> {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+          padding: EdgeInsets.symmetric( horizontal: 8),
           height: (_showAll || iconsList.length > 12)
               ? null
               : MediaQuery.of(context).size.height / 1.57,
@@ -51,13 +51,20 @@ class _BigContainerState extends State<BigContainer> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+                  SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                     mainAxisSpacing :5.0,
+   crossAxisSpacing : 5.0,
+ childAspectRatio: 0.7,
+                    ),
               itemCount: _showAll ? iconsList.length : 12,
               itemBuilder: (BuildContext ctx, index) {
                 if (_showAll || index < 12) {
                   return IconBox(
                       icon: iconsList[index][0],
-                      icon_name: iconsList[index][1]);
+                      icon_name: iconsList[index][1],
+                    cashback: iconsList[index][2],
+                      );
                 } else {
                   return Container(); // empty SizedBox to hide the item
                 }

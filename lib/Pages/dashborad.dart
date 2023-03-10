@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:khalti_clone/components/automzatic_scroll_card.dart';
 import 'package:khalti_clone/components/icon_box.dart';
+import 'package:khalti_clone/components/services_scrollable.dart';
 import 'package:khalti_clone/components/squareiconbox_scrollable.dart';
+import 'package:khalti_clone/components/vendor_company.dart';
 import 'package:khalti_clone/main.dart';
 
 import '../components/big_container.dart';
@@ -12,13 +14,7 @@ import 'events_page.dart';
 class DashBoard extends StatelessWidget {
   // const DashBoard({super.key});
 
-  List iconsList1 = [
-    ["lib/images/Topup.png", "Topup"],
-    ["lib/images/bulb.png", "electricity"],
-    ["lib/images/tap.png", "Khanepani"],
-    ["lib/images/in-love.png", "eSewa Care"],
-    ["lib/images/internet.png", "Internet"],
-  ];
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +71,7 @@ class DashBoard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Padding(
                 padding:
@@ -85,9 +81,9 @@ class DashBoard extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              // SizedBox(
+              //   height: 8,
+              // ),
               //-------------------lots of icons containing box------------------
               BigContainer(),
               //instead of sized box to give color
@@ -114,30 +110,8 @@ class DashBoard extends StatelessWidget {
               ),
 
               //--------------listview horizontally scrollable-------
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 3),
-                child: Text(
-                  "Featured Services",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-              Container(
-                height: 80,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: iconsList1.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                        width: 100,
-                        height: 100,
-                        child: IconBox(
-                          icon_name: iconsList1[index][1],
-                          icon: iconsList1[index][0],
-                        ));
-                  },
-                ),
-              ),
+             ScrollableServices(title: "Featured Services",),
+  
 
               //instead of sized box to give color
               Container(
@@ -145,30 +119,7 @@ class DashBoard extends StatelessWidget {
                 height: 10,
               ),
               //other features--------------------------------------------------
-                Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 3),
-                child: Text(
-                  "Featured Services",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-              Container(
-                height: 80,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: iconsList1.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                        width: 100,
-                        height: 100,
-                        child: IconBox(
-                          icon_name: iconsList1[index][1],
-                          icon: iconsList1[index][0],
-                        ));
-                  },
-                ),
-              ),
+                ScrollableServices(title:"Other services",),
               Container(
                 color: Colors.grey[300],
                 height: 10,
@@ -185,15 +136,9 @@ class DashBoard extends StatelessWidget {
               ),
 
               //squareIconBox---------------------wala listview
-                Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 3),
-                child: Text(
-                  "Registrations & Enrollments",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
+                
               SquareIconBoxScrollable(),
+              VendorCompany(),
               //instead of sized box to give color
               Container(
                 color: Colors.grey[300],

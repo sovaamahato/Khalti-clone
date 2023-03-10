@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'square_border_iconbox.dart';
 
-class SquareIconBoxScrollable extends StatelessWidget {
+class VendorCompany extends StatelessWidget {
 
   List imgList=[
     //'img','name'
-    ["lib/images/cr.jpg","Mr. & Miss National Nepal"],
-    ["lib/images/3d.png","Mr. & 3rd national coorperative"],
-    ["lib/images/3d.png","Mr. & Miss National Nepal"],
-    ["lib/images/3d.png","Mr. & 3rd national coorperative"],
+    ["lib/images/sparrow3.png","Mr. & Miss National Nepal"],
+    ["lib/images/veda.jpg","Mr. & 3rd national coorperative"],
+    ["lib/images/mmc.jpg","Mr. & Miss National Nepal"],
+    ["lib/images/ITKarkhana.jpg","Mr. & 3rd national coorperative"],
   ];
 
   @override
@@ -21,7 +21,7 @@ class SquareIconBoxScrollable extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10.0, ),
                 child: Text(
-                  "Registrations & Enrollments",
+                  "Send Money To Vendor",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
