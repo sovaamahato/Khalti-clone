@@ -17,6 +17,7 @@ class SquareIconBoxScrollable extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 10,),
         Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10.0, ),
@@ -26,7 +27,7 @@ class SquareIconBoxScrollable extends StatelessWidget {
                 ),
               ),
         Container(
-                    height: 190,
+                    height: 160,
                     
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,

@@ -4,7 +4,8 @@ import 'icon_box.dart';
 
 class ScrollableServices extends StatelessWidget {
   final String title;
-  ScrollableServices({required this.title});
+  final String title2;
+  ScrollableServices({required this.title,this.title2=""});
    List iconsList1 = [
     ["lib/images/Topup.png", "Topup"],
     ["lib/images/bulb.png", "electricity"],
@@ -16,14 +17,27 @@ class ScrollableServices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-       Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 3),
-                child: Text(
-                  title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
+       Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         children: [
+           Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10.0, vertical: 3),
+                    child: Text(
+                      title,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10.0, vertical: 3),
+                    child: Text(
+                      title2,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+         ],
+       ),
               Container(
                 height: 95,
                 padding: const EdgeInsets.only(top: 10),

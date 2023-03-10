@@ -8,13 +8,12 @@ import 'package:khalti_clone/main.dart';
 
 import '../components/big_container.dart';
 import '../components/my_app_bar.dart';
+import '../components/scrollable_goverment_services.dart';
 import '../components/square_border_iconbox.dart';
 import 'events_page.dart';
 
 class DashBoard extends StatelessWidget {
   // const DashBoard({super.key});
-
- 
 
   @override
   Widget build(BuildContext context) {
@@ -110,8 +109,9 @@ class DashBoard extends StatelessWidget {
               ),
 
               //--------------listview horizontally scrollable-------
-             ScrollableServices(title: "Featured Services",),
-  
+              ScrollableServices(
+                title: "Featured Services",
+              ),
 
               //instead of sized box to give color
               Container(
@@ -119,7 +119,9 @@ class DashBoard extends StatelessWidget {
                 height: 10,
               ),
               //other features--------------------------------------------------
-                ScrollableServices(title:"Other services",),
+              ScrollableServices(
+                title: "Other services",
+              ),
               Container(
                 color: Colors.grey[300],
                 height: 10,
@@ -127,7 +129,7 @@ class DashBoard extends StatelessWidget {
 
               //--------------scrollable card horizontally-----------------
               //automatic scroll banauna bakii--
-             
+
               AutomaticScrollCard(),
               //instead of sized box to give color
               Container(
@@ -136,17 +138,24 @@ class DashBoard extends StatelessWidget {
               ),
 
               //squareIconBox---------------------wala listview
-                
+
               SquareIconBoxScrollable(),
-              VendorCompany(),
               //instead of sized box to give color
               Container(
                 color: Colors.grey[300],
                 height: 10,
               ),
+              ScrollableGovernmentServices(),
+              //instead of sized box to give color
+              Container(
+                color: Colors.grey[300],
+                height: 10,
+              ),
+              VendorCompany(),
+
               //-----------one card-----------------------
               Container(
-                padding: EdgeInsets.symmetric(vertical:10),
+                padding: EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(4)),
@@ -154,6 +163,39 @@ class DashBoard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     child: Image.asset("lib/images/card2.jpg")),
               ),
+              //online acceptance--------------------------
+              ScrollableServices(
+                title: "We're accepted Online At",
+                title2: "SEE ALL",
+              ),
+//instead of sized box to give color
+              Container(
+                color: Colors.grey[300],
+                height: 10,
+              ),
+              SizedBox(height: 10,),
+
+              ListTile(
+                leading: Icon(Icons.headphones),
+                title: Text("Khalti Help & Support"),
+                subtitle: Text(
+                  "Facing problems? Get quick support on your queries",
+                  style: TextStyle(fontSize: 12.5),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right:40.0,left: 45),
+                child: Divider(color: Colors.grey,),
+              ),
+ListTile(
+                leading: Icon(Icons.lock),
+                title: Text("Secure Khalti App & Transactions"),
+                subtitle: Text(
+                  "For 2-Step verification use Khalti MPIN or biometric",
+                  style: TextStyle(fontSize: 12.5),
+                ),
+              ),
+              SizedBox(height: 10,)
             ],
           ),
         ),

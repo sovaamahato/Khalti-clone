@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Pages/profile_page.dart';
+
 class MyAppBar extends StatefulWidget {
   const MyAppBar({super.key});
 
@@ -18,8 +20,13 @@ class _MyAppBarState extends State<MyAppBar> {
 
   @override
   Widget build(BuildContext context) {
+    int height=MediaQuery.of(context).size.height as int;
+    int width =MediaQuery.of(context).size.width as int;
+    // print(height);
+    // print("w = $width");
     return Container(
-        height: MediaQuery.of(context).size.height * 0.29,
+        height:width>400?MediaQuery.of(context).size.height * 0.3: MediaQuery.of(context).size.height * 0.29,
+        
         decoration: BoxDecoration(
             color: Colors.purple,
             borderRadius: BorderRadius.only(
@@ -34,11 +41,18 @@ class _MyAppBarState extends State<MyAppBar> {
                 children: [
                   Row(
                     children: [
-                      CircleAvatar(
-                        radius: 18,
-                        backgroundImage: NetworkImage(
-                          "https://i0.wp.com/blankhearts.com/wp-content/uploads/2022/10/girl-whatsapp-dp-7.jpg?fit=474%2C790&ssl=1",
-                          // fit: BoxFit.cover
+                      InkWell(
+                        onTap: () => {
+                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                            return ProfilePage();
+                          }))
+                        },
+                        child: CircleAvatar(
+                          radius: 18,
+                          backgroundImage: NetworkImage(
+                            "https://i0.wp.com/blankhearts.com/wp-content/uploads/2022/10/girl-whatsapp-dp-7.jpg?fit=474%2C790&ssl=1",
+                            // fit: BoxFit.cover
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -109,6 +123,7 @@ class _MyAppBarState extends State<MyAppBar> {
               ),
               //balance dekhaune row---------
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Stack(
                     children: [
@@ -213,6 +228,8 @@ class _MyAppBarState extends State<MyAppBar> {
                     width: 75,
                     height: 90,
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start
+              ,
                       children: [
                         Container(
                           height: 40,
@@ -231,20 +248,18 @@ class _MyAppBarState extends State<MyAppBar> {
                         ),
                         Text(
                           "Add money",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white,fontSize: 13),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
+                  
                   Container(
                     height: 90,
-                    width: 55,
+                    width:width>400?90: 55,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           height: 40,
@@ -259,11 +274,18 @@ class _MyAppBarState extends State<MyAppBar> {
                           ),
                         ),
                         SizedBox(
-                          height: 9,
+                          height: 15,
                         ),
-                        Text(
-                          " Send money",
-                          style: TextStyle(color: Colors.white),
+                        Container(
+                          width: 200,
+                          
+                          child: Padding(
+                            padding:width>400?const EdgeInsets.only(left:2.0): const EdgeInsets.only(left:10.0),
+                            child: Text(
+                              " Send Money",
+                              style: TextStyle(fontSize: 13,color: Colors.white),
+                            ),
+                          ),
                         )
                       ],
                     ),

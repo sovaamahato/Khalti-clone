@@ -6,10 +6,11 @@ class VendorCompany extends StatelessWidget {
 
   List imgList=[
     //'img','name'
-    ["lib/images/sparrow3.png","Mr. & Miss National Nepal"],
-    ["lib/images/veda.jpg","Mr. & 3rd national coorperative"],
-    ["lib/images/mmc.jpg","Mr. & Miss National Nepal"],
-    ["lib/images/ITKarkhana.jpg","Mr. & 3rd national coorperative"],
+    // ["lib/images/sparrow3.png","Mr. & Miss National Nepal"],
+    ["lib/images/veda.jpg","Veda"],
+    ["lib/images/mmc.jpg","Mithlesh Mobile"],
+    ["lib/images/veda.jpg","Veda"],
+    ["lib/images/ITKarkhana.jpg","IT Karkhana"],
   ];
 
   @override
@@ -17,6 +18,7 @@ class VendorCompany extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 10,),
         Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10.0, ),
@@ -26,8 +28,8 @@ class VendorCompany extends StatelessWidget {
                 ),
               ),
         Container(
-                    height: 190,
-                    
+                    height: 150,
+                    // color: Colors.amber,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: imgList.length,
