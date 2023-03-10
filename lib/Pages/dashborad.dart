@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khalti_clone/components/automzatic_scroll_card.dart';
 import 'package:khalti_clone/components/icon_box.dart';
 import 'package:khalti_clone/components/squareiconbox_scrollable.dart';
 import 'package:khalti_clone/main.dart';
@@ -175,24 +176,9 @@ class DashBoard extends StatelessWidget {
 
               //--------------scrollable card horizontally-----------------
               //automatic scroll banauna bakii--
-              Container(
-                height: 100,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 4,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(4)),
-              
-              child: ClipRRect(borderRadius: BorderRadius.circular(10),child: Image.asset("lib/images/card.jpg")),
-             );
-                  },
-                ),
-              ),
+             
+              AutomaticScrollCard(),
+              //instead of sized box to give color
               Container(
                 color: Colors.grey[300],
                 height: 10,
@@ -203,11 +189,26 @@ class DashBoard extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10.0, vertical: 3),
                 child: Text(
-                  "Featured Services",
+                  "Registrations & Enrollments",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
               SquareIconBoxScrollable(),
+              //instead of sized box to give color
+              Container(
+                color: Colors.grey[300],
+                height: 10,
+              ),
+              //-----------one card-----------------------
+              Container(
+                padding: EdgeInsets.symmetric(vertical:10),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(4)),
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset("lib/images/card2.jpg")),
+              ),
             ],
           ),
         ),

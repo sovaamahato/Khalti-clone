@@ -15,7 +15,7 @@ class SquareIconBoxScrollable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-                height: 140,
+                height: 190,
                 
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,

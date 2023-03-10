@@ -21,7 +21,7 @@ class SquareBorderIconBox extends StatelessWidget {
             Container(
               
               padding: EdgeInsets.symmetric(horizontal:20,vertical: 20),
-              decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.circular(8),border: Border.all(color: Colors.grey.shade400,width: 1.5)),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),border: Border.all(color: Colors.grey.shade400,width: 1.5)),
               child: Container(
                 
                 height: 53,
