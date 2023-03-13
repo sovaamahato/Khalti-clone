@@ -45,7 +45,11 @@ class _MyAppBarState extends State<MyAppBar> {
                         onTap: () => {
                           Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
                             return ProfilePage();
-                          }))
+                            
+                          }),
+                          ),
+                         
+
                         },
                         child: CircleAvatar(
                           radius: 18,
