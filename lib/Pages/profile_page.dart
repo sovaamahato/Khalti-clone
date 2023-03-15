@@ -20,7 +20,7 @@ class ProfilePage extends StatelessWidget {
                 "My Account",
                 style: TextStyle(color: Colors.purple, fontSize: 20),
               ),
-      
+
               SizedBox(
                 height: 20,
               ),
@@ -58,7 +58,8 @@ class ProfilePage extends StatelessWidget {
                     //name
                     Text(
                       "Sova Kumari Kushwaha",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                     ),
                     SizedBox(
                       height: 8,
@@ -71,7 +72,7 @@ class ProfilePage extends StatelessWidget {
                     SizedBox(
                       height: 22,
                     ),
-      
+
                     //---------consumer wala row------------------------
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -103,7 +104,7 @@ class ProfilePage extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              
+
               Container(
                 child: Column(
                   children: [
@@ -116,7 +117,9 @@ class ProfilePage extends StatelessWidget {
                           size: 30,
                           color: Colors.purple,
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -127,50 +130,80 @@ class ProfilePage extends StatelessWidget {
                                 children: const <TextSpan>[
                                   TextSpan(
                                       text: '0',
-                                      style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
-                                  
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold)),
                                 ],
                               ),
                             ),
-                            Text("Available Balance",style: TextStyle(color: Colors.grey[500]),),
-                            
+                            Text(
+                              "Available Balance",
+                              style: TextStyle(color: Colors.grey[500]),
+                            ),
                           ],
                         )
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     //3 ota paisa wala row---------------------------------
                     //row1
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                      Text("Main Balance",style: TextStyle(color: Colors.grey[600]),),
-                      Text("Rs. 0")
-                    ],),
-                    SizedBox(height: 10,),
-      
+                        Text(
+                          "Main Balance",
+                          style: TextStyle(color: Colors.grey[600]),
+                        ),
+                        Text("Rs. 0")
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+
                     //row2
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                      Text("Bonus Balance",style: TextStyle(color: Colors.grey[600]),),
-                      Text("Rs. 0")
-                    ],),
-                    SizedBox(height: 10,),
+                        Text(
+                          "Bonus Balance",
+                          style: TextStyle(color: Colors.grey[600]),
+                        ),
+                        Text("Rs. 0")
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     //row3
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                      Text("Khalti Points",style: TextStyle(color: Colors.grey[600]),),
-                      Text("KP 0")
-                    ],),
-                    SizedBox(height: 10,),
-                    Divider(color: Colors.grey[600],thickness: 0.2,),
-                    SizedBox(height: 10,),
-                    Row(children: [
-                      Icon(Icons.info_outline_rounded),
-                      Text(" Note: Bonus Balance is not transfferable")
-                    ],)
+                        Text(
+                          "Khalti Points",
+                          style: TextStyle(color: Colors.grey[600]),
+                        ),
+                        Text("KP 0")
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Divider(
+                      color: Colors.grey[600],
+                      thickness: 0.2,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.info_outline_rounded),
+                        Text(" Note: Bonus Balance is not transfferable")
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -182,19 +215,55 @@ class ProfilePage extends StatelessWidget {
                   "Fill your KYC form",
                   style: TextStyle(fontSize: 12.5),
                 ),
+                trailing: Icon(Icons.arrow_forward_ios,size:20 ,),
               ),
               Padding(
-                padding: const EdgeInsets.only(right:40.0,left: 45),
-                child: Divider(color: Colors.grey,),
+                padding: const EdgeInsets.only(right: 40.0, left: 45),
+                child: Divider(
+                  color: Colors.grey,
+                ),
               ),
-ListTile(
+              ListTile(
                 leading: Icon(Icons.lock),
                 title: Text("Nominee"),
                 subtitle: Text(
                   "Add Nominee To Your Khalti Account",
                   style: TextStyle(fontSize: 12.5),
+                  
                 ),
+                trailing: Icon(Icons.arrow_forward_ios,size:20 ,),
               ),
+              SizedBox(height: 15,),
+              //--------------------------divider-------------------
+              Divider(
+                      color: Colors.grey[500],
+                      thickness: 0.2,
+                    ),
+SizedBox(height: 15,),
+
+                   RichText(
+                              text: TextSpan(
+                                text: 'To Change any details after verification, please contact our Support Team at ',
+                                style: TextStyle(color: Colors.grey,),
+                                children: const <TextSpan>[
+                                  TextSpan(
+                                      text: 'support@khalti.com',
+                                      style: TextStyle(
+                                         color: Colors.purple,
+                                          fontWeight: FontWeight.bold)),
+                                          TextSpan(
+                                      text: ' or ',
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                         )),
+                                          TextSpan(
+                                      text: '1660-012-0998',
+                                      style: TextStyle(
+                                         color: Colors.purple,
+                                          fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                            ),
             ],
           ),
         ),
