@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Pages/profile_page.dart';
+import '../Pages/promo_code_page.dart';
 
 class MyAppBar extends StatefulWidget {
   const MyAppBar({super.key});
@@ -91,13 +92,21 @@ class _MyAppBarState extends State<MyAppBar> {
                         Positioned(
                           left: 1,
                           top: 3,
-                          child: Container(
-                            height: 29,
-                            width: 30,
-                            child: Image.asset(
-                              "lib/images/giftbox.png",
-                              fit: BoxFit.cover,
-                              color: Color.fromARGB(255, 245, 75, 132),
+                          child: GestureDetector(
+                            onTap: ()=> {
+                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                            return PromoCodesPage();
+                            
+                          }),
+                          ),},
+                            child: Container(
+                              height: 29,
+                              width: 30,
+                              child: Image.asset(
+                                "lib/images/giftbox.png",
+                                fit: BoxFit.cover,
+                                color: Color.fromARGB(255, 245, 75, 132),
+                              ),
                             ),
                           ),
                         ),

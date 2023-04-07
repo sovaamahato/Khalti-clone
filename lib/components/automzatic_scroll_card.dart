@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+
 class AutomaticScrollCard extends StatefulWidget {
   const AutomaticScrollCard({Key? key}) : super(key: key);
 
@@ -22,7 +23,6 @@ class _AutomaticScrollCardState extends State<AutomaticScrollCard> {
       child: Container(
         width: double.infinity,
         height: 200,
-        
         child: Image.asset("lib/images/cardII.jpg"),
       ),
     ),
@@ -30,24 +30,21 @@ class _AutomaticScrollCardState extends State<AutomaticScrollCard> {
       child: Container(
         width: double.infinity,
         height: 200,
-        
-         child: Image.asset("lib/images/cardIII.jpg"),
+        child: Image.asset("lib/images/cardIII.jpg"),
       ),
     ),
     Card(
       child: Container(
         width: double.infinity,
         height: 200,
-        
-         child: Image.asset("lib/images/cardIV.jpg"),
+        child: Image.asset("lib/images/cardIV.jpg"),
       ),
     ),
     Card(
       child: Container(
         width: double.infinity,
         height: 200,
-        
-         child: Image.asset("lib/images/cardV.jpg"),
+        child: Image.asset("lib/images/cardV.jpg"),
       ),
     ),
   ];
@@ -61,12 +58,16 @@ class _AutomaticScrollCardState extends State<AutomaticScrollCard> {
     super.initState();
     // Start the timer when the widget is initialized
     timer = Timer.periodic(Duration(seconds: 2), (Timer t) {
-      if (controller.page == cards.length - 1) {
-        controller.animateToPage(0,
-            duration: Duration(milliseconds: 500), curve: Curves.ease);
-      } else {
-        controller.nextPage(
-            duration: Duration(milliseconds: 500), curve: Curves.ease);
+      if (controller.hasClients && controller.page != null) 
+      {
+        if (controller.page == cards.length - 1) {
+          controller.animateToPage(0,
+              duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+        } else {
+          controller.nextPage(
+          
+              duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+         }
       }
     });
   }
@@ -81,10 +82,12 @@ class _AutomaticScrollCardState extends State<AutomaticScrollCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      child: PageView(
-        controller: controller,
-        children: cards,
+      
+      child: Expanded(
+        child: PageView(
+          controller: controller,
+          children: cards,
+        ),
       ),
     );
   }
