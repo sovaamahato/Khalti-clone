@@ -86,7 +86,7 @@ class _AutomaticScrollCardState extends State<AutomaticScrollCard> {
       child: Expanded(
         child: PageView(
           controller: controller,
-          children: cards,
+          children: cards.toList(),
         ),
       ),
     );

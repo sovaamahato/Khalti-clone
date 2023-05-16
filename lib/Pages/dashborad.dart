@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:khalti_clone/components/automzatic_scroll_card.dart';
+//import 'package:khalti_clone/components/automzatic_scroll_card.dart';
 // import 'package:khalti_clone/components/icon_box.dart';
 import 'package:khalti_clone/components/services_scrollable.dart';
 import 'package:khalti_clone/components/squareiconbox_scrollable.dart';
@@ -140,7 +140,10 @@ class _DashBoardState extends State<DashBoard> {
           // Add constraints for the container's size
           width: double.infinity,
           height: 200,
-              child:AutomaticScrollCard(),),
+              // child:
+              //AutomaticScrollCard(),
+              
+              ),
               //instead of sized box to give color
               Container(
                 color: Colors.grey[300],
