@@ -27,7 +27,66 @@ class Menu extends StatelessWidget {
       "My Bookings",
       "view your bookings history"
     ],
+    [
+      Icons.question_mark_outlined,
+      "Cashback & Offers",
+      "Recent Offers,Khalti Points & Cashbacks"
+    ],
+    [
+      Icons.poll_outlined,
+      "Transaction Limits",
+      "view your transaction limits"
+    ],
+    [
+      Icons.phone_in_talk_sharp,
+      "Help & Support",
+      "Customer Support & FAQs"
+    ],
+    [
+      Icons.airplane_ticket_outlined,
+      "Coupen",
+      "Redeem promocode & get Khalti balance"
+    ],
+   
+    
   ];
+
+    List listTileItems2 = [
+        [
+      Icons.person_add,
+      "Refer Consumer & Earn",
+      "Add & view consumer earnings"
+    ],
+    [
+      Icons.playlist_add_check_circle_outlined,
+      "Khalti Points",
+      "Redeem Khalti Points for various offers"
+    ],
+     [
+      Icons.settings_outlined,
+      "Settings",
+      "Accounts,Security, Payments,Notifications,Language,External Links & General"
+    ],
+
+    ];
+    List listTileItems3 = [
+        [
+      Icons.info_outline_rounded,
+      "About Khalti",
+      "Know more about us"
+    ],
+    [
+      Icons.download,
+      "Check for Updates",
+      "Spp version 3.19.00"
+    ],
+     [
+      Icons.login_outlined,
+      "Logout",
+      "Logout from your Khalti account"
+    ],
+
+    ];
 
   @override
   Widget build(BuildContext context) {
@@ -254,7 +313,60 @@ class Menu extends StatelessWidget {
                     trailing: Icon(Icons.arrow_forward_ios,size: 20,color: Colors.purple,),
                   );
                 }),
-          )
+          ),
+          // SizedBox(
+          //   height: 10,
+          // ),
+
+          Divider(
+            color: Colors.grey,
+            endIndent: 5,
+          ),
+
+          SizedBox(
+            height: 14,
+          ),
+// line pxi ko listTiless--
+          Container(
+            height: 235,
+            child: ListView.builder(
+                itemCount: listTileItems2.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    leading: Icon(listTileItems2[index][0],color: Colors.purple,),
+                    title: Text(listTileItems2[index][1]),
+                    subtitle: Text(listTileItems2[index][2]),
+                    trailing: Icon(Icons.arrow_forward_ios,size: 20,color: Colors.purple,),
+                  );
+                }),
+          ),
+
+          // SizedBox(
+          //   height: 10,
+          // ),
+
+          Divider(
+            color: Colors.grey,
+            endIndent: 5,
+          ),
+
+          // SizedBox(
+          //   height: 14,
+          // ),
+          // line pxi ko listTiless--
+          Container(
+            height: 235,
+            child: ListView.builder(
+                itemCount: listTileItems3.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    leading: Icon(listTileItems3[index][0],color: Colors.purple,),
+                    title: Text(listTileItems3[index][1]),
+                    subtitle: Text(listTileItems3[index][2]),
+                    trailing: Icon(Icons.arrow_forward_ios,size: 20,color: Colors.purple,),
+                  );
+                }),
+          ),
         ],
       )),
     );

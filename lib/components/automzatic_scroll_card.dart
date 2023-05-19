@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -97,11 +98,12 @@ class _AutomaticScrollCardState extends State<AutomaticScrollCard> {
         items:images.map((item) => Image.asset(item,)).toList(),
         options:CarouselOptions(
           height:200.0,
-          ViewportFraction:1,
+          viewportFraction:1,
           enlargeCenterPage:false,
           autoPlay:true,
           autoPlayInterval:const Duration(seconds: 3),
-          autoPlayAnimationDuration:const Duration(microseconds: 800),
+          enableInfiniteScroll: true,
+          //autoPlayAnimationDuration:const Duration(microseconds: 800),
         )
       )
     );
