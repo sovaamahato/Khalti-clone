@@ -138,8 +138,8 @@ class _DashBoardState extends State<DashBoard> {
               //automatic scroll banauna bakii--
           Container(
           // Add constraints for the container's size
-          width: double.infinity,
-          height: 200,
+          width: double.infinity.toDouble(),
+          height: 200.00,
               child:
               AutomaticScrollCard(),
               

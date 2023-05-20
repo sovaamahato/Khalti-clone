@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../Pages/profile_page.dart';
 import '../Pages/promo_code_page.dart';
+import 'custom_search_delegate.dart';
 
 class MyAppBar extends StatefulWidget {
   const MyAppBar({super.key});
@@ -21,8 +22,8 @@ class _MyAppBarState extends State<MyAppBar> {
 
   @override
   Widget build(BuildContext context) {
-    int height=MediaQuery.of(context).size.height as int;
-    int width =MediaQuery.of(context).size.width as int;
+    double height=MediaQuery.of(context).size.height ;
+    double width =MediaQuery.of(context).size.width;
     // print(height);
     // print("w = $width");
     return Container(
@@ -75,10 +76,15 @@ class _MyAppBarState extends State<MyAppBar> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Icon(
-                        Icons.search,
-                        color: Colors.white,
-                        size: 29,
+                      GestureDetector(
+                    onTap: ()=>showSearch(
+    context: context,
+    delegate: CustomSearchDelegate()),
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.white,
+                          size: 29,
+                        ),
                       ),
                       SizedBox(
                         width: 12,
@@ -259,9 +265,14 @@ class _MyAppBarState extends State<MyAppBar> {
                         SizedBox(
                           height: 15,
                         ),
-                        Text(
-                          "Add money",
-                          style: TextStyle(color: Colors.white,fontSize: 13),
+                        GestureDetector(
+                          onTap: (){
+                            
+                          },
+                          child: Text(
+                            "Add money",
+                            style: TextStyle(color: Colors.white,fontSize: 13),
+                          ),
                         )
                       ],
                     ),
