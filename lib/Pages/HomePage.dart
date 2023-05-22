@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
       tabselectedIndex = tabIndex;
     });
 
-    print("Selected tab index: $tabIndex");
+    //print("Selected tab index: $tabIndex");
   }
   //-----------------------------------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
           inactiveColorPrimary: Colors.grey.shade600,
           activeColorPrimary: Colors.purple),
       PersistentBottomNavBarItem(
-          icon: Icon(Icons.phone_callback_outlined),
+          icon: Icon(Icons.phone_in_talk_sharp),
           title: "Support",
           inactiveColorPrimary: Colors.grey.shade600,
           activeColorPrimary: Colors.purple),

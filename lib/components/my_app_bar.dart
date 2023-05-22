@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../Pages/add_money_page.dart';
 import '../Pages/profile_page.dart';
 import '../Pages/promo_code_page.dart';
 import 'custom_search_delegate.dart';
@@ -12,7 +13,7 @@ class MyAppBar extends StatefulWidget {
 }
 
 class _MyAppBarState extends State<MyAppBar> {
-  bool isShow = true;
+  bool isShow = false;
 
   void ShowNum() {
     setState(() {
@@ -22,13 +23,14 @@ class _MyAppBarState extends State<MyAppBar> {
 
   @override
   Widget build(BuildContext context) {
-    double height=MediaQuery.of(context).size.height ;
-    double width =MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     // print(height);
     // print("w = $width");
     return Container(
-        height:width>400?MediaQuery.of(context).size.height * 0.3: MediaQuery.of(context).size.height * 0.29,
-        
+        height: width > 400
+            ? MediaQuery.of(context).size.height * 0.3
+            : MediaQuery.of(context).size.height * 0.29,
         decoration: BoxDecoration(
             color: Colors.purple,
             borderRadius: BorderRadius.only(
@@ -45,13 +47,12 @@ class _MyAppBarState extends State<MyAppBar> {
                     children: [
                       InkWell(
                         onTap: () => {
-                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                            return ProfilePage();
-                            
-                          }),
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (BuildContext context) {
+                              return ProfilePage();
+                            }),
                           ),
-                         
-
                         },
                         child: CircleAvatar(
                           radius: 18,
@@ -77,9 +78,8 @@ class _MyAppBarState extends State<MyAppBar> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       GestureDetector(
-                    onTap: ()=>showSearch(
-    context: context,
-    delegate: CustomSearchDelegate()),
+                        onTap: () => showSearch(
+                            context: context, delegate: CustomSearchDelegate()),
                         child: Icon(
                           Icons.search,
                           color: Colors.white,
@@ -93,18 +93,20 @@ class _MyAppBarState extends State<MyAppBar> {
                         Container(
                           width: 30,
                           height: 32,
-                          
                         ),
                         Positioned(
                           left: 1,
                           top: 3,
                           child: GestureDetector(
-                            onTap: ()=> {
-                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                            return PromoCodesPage();
-                            
-                          }),
-                          ),},
+                            onTap: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) {
+                                  return PromoCodesPage();
+                                }),
+                              ),
+                            },
                             child: Container(
                               height: 29,
                               width: 30,
@@ -151,75 +153,81 @@ class _MyAppBarState extends State<MyAppBar> {
                         height: 100,
                       ),
                       Positioned(
-                          child: Container(
-                        width: 170,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade100,
-                            borderRadius: BorderRadius.circular(8)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        //---------------------this need be replace---------------------------------------------
-                                        "rs.",
-                                        style: TextStyle(
-                                            color: Colors.purple,
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      isShow
-                                          ? Text(
-                                              "0",
-                                              style: TextStyle(
-                                                  color: Colors.purple,
-                                                  fontSize: 25,
-                                                  fontWeight: FontWeight.bold),
-                                            )
-                                          : Text(
-                                              "XXX.XX",
-                                              style: TextStyle(
-                                                  color: Colors.purple,
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold),
-                                            )
-                                    ],
+                          child: GestureDetector(
+                        onTap: ShowNum,
+                        child: Container(
+                          width: 170,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade100,
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          //---------------------this need be replace---------------------------------------------
+                                          "rs.",
+                                          style: TextStyle(
+                                              color: Colors.purple,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        isShow
+                                            ? Text(
+                                                "0",
+                                                style: TextStyle(
+                                                    color: Colors.purple,
+                                                    fontSize: 25,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )
+                                            : Text(
+                                                "XXX.XX",
+                                                style: TextStyle(
+                                                    color: Colors.purple,
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 8,
-                                ),
-                                Row(
-                                  children: [
-                                    GestureDetector(
-                                      onTap: ShowNum,
-                                      child: isShow
-                                          ? Icon(
-                                              Icons.remove_red_eye,
-                                              color: Colors.purple,
-                                            )
-                                          : Icon(
-                                              Icons.visibility_off_outlined,
-                                              color: Colors.purple,
-                                            ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  GestureDetector(
+                                    onTap: ShowNum,
+                                    child: Row(
+                                      children: [
+                                        isShow
+                                            ? Icon(
+                                                Icons.remove_red_eye,
+                                                color: Colors.purple,
+                                              )
+                                            : Icon(
+                                                Icons.visibility_off_outlined,
+                                                color: Colors.purple,
+                                              ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(
+                                          "Khalti Balance",
+                                          style:
+                                              TextStyle(color: Colors.purple),
+                                        )
+                                      ],
                                     ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Text(
-                                      "Khalti Balance",
-                                      style: TextStyle(color: Colors.purple),
-                                    )
-                                  ],
-                                )
-                              ]),
+                                  )
+                                ]),
+                          ),
+                          height: 90,
                         ),
-                        height: 90,
                       )),
                       Positioned(
                         left: 155,
@@ -243,44 +251,45 @@ class _MyAppBarState extends State<MyAppBar> {
                   SizedBox(
                     width: 10,
                   ),
-                  Container(
-                    width: 75,
-                    height: 90,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start
-              ,
-                      children: [
-                        Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return AddMoneyPage();
+                      }));
+                    },
+                    child: Container(
+                      width: 75,
+                      height: 90,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.white,
+                            ),
+                            child: Icon(
+                              Icons.wallet,
+                              color: Colors.purple,
+                            ),
                           ),
-                          child: Icon(
-                            Icons.wallet,
-                            color: Colors.purple,
+                          SizedBox(
+                            height: 15,
                           ),
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        GestureDetector(
-                          onTap: (){
-                            
-                          },
-                          child: Text(
+                          Text(
                             "Add money",
-                            style: TextStyle(color: Colors.white,fontSize: 13),
-                          ),
-                        )
-                      ],
+                            style: TextStyle(color: Colors.white, fontSize: 13),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  
                   Container(
                     height: 90,
-                    width:width>400?90: 55,
+                    width: width > 400 ? 90 : 55,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -302,12 +311,14 @@ class _MyAppBarState extends State<MyAppBar> {
                         ),
                         Container(
                           width: 200,
-                          
                           child: Padding(
-                            padding:width>400?const EdgeInsets.only(left:2.0): const EdgeInsets.only(left:10.0),
+                            padding: width > 400
+                                ? const EdgeInsets.only(left: 2.0)
+                                : const EdgeInsets.only(left: 10.0),
                             child: Text(
                               " Send Money",
-                              style: TextStyle(fontSize: 13,color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 13, color: Colors.white),
                             ),
                           ),
                         )

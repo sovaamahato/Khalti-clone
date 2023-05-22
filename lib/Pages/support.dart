@@ -9,8 +9,10 @@ class Support extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
-        backgroundColor: Colors.white,
+         backgroundColor: Colors.white,
+        title: Text(" "),
         leading: GestureDetector(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
