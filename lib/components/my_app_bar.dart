@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../Pages/add_money_page.dart';
 import '../Pages/profile_page.dart';
 import '../Pages/promo_code_page.dart';
+import '../Pages/send_money_page.dart';
 import 'custom_search_delegate.dart';
 
 class MyAppBar extends StatefulWidget {
@@ -287,42 +288,51 @@ class _MyAppBarState extends State<MyAppBar> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 90,
-                    width: width > 400 ? 90 : 55,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white,
-                          ),
-                          child: Icon(
-                            Icons.phone_android,
-                            color: Colors.purple,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Container(
-                          width: 200,
-                          child: Padding(
-                            padding: width > 400
-                                ? const EdgeInsets.only(left: 2.0)
-                                : const EdgeInsets.only(left: 10.0),
-                            child: Text(
-                              " Send Money",
-                              style:
-                                  TextStyle(fontSize: 13, color: Colors.white),
+                  GestureDetector(
+                    onTap: () {
+                            
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return SendMoneyPage();
+                      }));},
+                         
+                    child: Container(
+                      height: 90,
+                      width: width > 400 ? 90 : 55,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.white,
+                            ),
+                            child: Icon(
+                              Icons.phone_android,
+                              color: Colors.purple,
                             ),
                           ),
-                        )
-                      ],
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            width: 200,
+                            child: Padding(
+                              padding: width > 400
+                                  ? const EdgeInsets.only(left: 2.0)
+                                  : const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                " Send Money",
+                                style:
+                                    TextStyle(fontSize: 13, color: Colors.white),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   )
                 ],
