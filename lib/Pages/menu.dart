@@ -121,6 +121,8 @@ class Menu extends StatelessWidget {
                   height: 140,
                   width: MediaQuery.of(context).size.width * 0.35,
                   color: Colors.amber,
+                  child: Image.asset("lib/images/no_profile.jpg",
+                  fit: BoxFit.cover,),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.60,

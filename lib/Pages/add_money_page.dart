@@ -26,6 +26,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(" "),
+          
         ),
     
         body: Column(
