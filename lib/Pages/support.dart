@@ -10,21 +10,12 @@ class Support extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      appBar: AppBar(
-         backgroundColor: Colors.white,
-        title: Text(" "),
-        leading: GestureDetector(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return MyHomePage();
-              }));
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            )),
-        elevation: 0,
-      ),
+      appBar: 
+        AppBar(
+          title: Text(" ",),
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+        ),
       body: Container(
         child: Padding(
           padding: const EdgeInsets.only(top: 10.0, bottom: 10, left: 10),

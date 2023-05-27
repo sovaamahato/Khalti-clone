@@ -29,17 +29,9 @@ class SendMoneyPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.white,
-            title: Text(" "),
-            leading: GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return MyHomePage();
-                }));
-              },
-              child: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            )),
+            title: Text(" ",),
+          
+          foregroundColor: Colors.black,
         elevation: 0,
             ),
             body: Padding(

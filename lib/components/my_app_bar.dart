@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Pages/add_money_page.dart';
+import '../Pages/notification_page.dart';
 import '../Pages/profile_page.dart';
 import '../Pages/promo_code_page.dart';
 import '../Pages/send_money_page.dart';
@@ -131,10 +132,18 @@ class _MyAppBarState extends State<MyAppBar> {
                       SizedBox(
                         width: 12,
                       ),
-                      Icon(
-                        Icons.notifications_outlined,
-                        size: 29,
-                        color: Colors.white,
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)
+                          {
+                           return  NotificationPage();
+                          }));
+                        },
+                        child: Icon(
+                          Icons.notifications_outlined,
+                          size: 29,
+                          color: Colors.white,
+                        ),
                       )
                     ],
                   )

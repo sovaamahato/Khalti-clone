@@ -1,22 +1,26 @@
+
 import 'package:flutter/material.dart';
 import 'package:khalti_clone/tabs/Bank_tab.dart';
 import 'package:khalti_clone/tabs/other_way_tab.dart';
 
+import '../tabs/inbox_notification_tab.dart';
+import '../tabs/offers_notoficaton_tab.dart';
 
 
-class AddMoneyPage extends StatefulWidget {
-  const AddMoneyPage({super.key});
+
+class NotificationPage extends StatefulWidget {
+ 
 
   @override
-  State<AddMoneyPage> createState() => _AddMoneyPageState();
+  State<NotificationPage> createState() => _NotificationPageState();
 }
 
-class _AddMoneyPageState extends State<AddMoneyPage> {
+class _NotificationPageState extends State<NotificationPage> {
 
   List <Widget>tabOpts=
   [
-    Text("Banks",style: TextStyle(color: Colors.purple),),
-    Text("Other ways",style: TextStyle(color: Colors.purple),)
+    Text("INBOX",style: TextStyle(color: Colors.purple),),
+    Text("OFFERS",style: TextStyle(color: Colors.purple),)
     
   ];
   @override
@@ -25,6 +29,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           title: Text(" ",),
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
@@ -36,7 +41,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-                    "Add Money",
+                    "Notifications",
                     style: TextStyle(
                         color: Colors.purple,
                         fontSize: 30,
@@ -49,7 +54,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    " available Balance 0",
+                    "See new updates, offers & notices here ",
                     style: TextStyle(
                       color: Colors.grey[500],
                     ),
@@ -61,8 +66,8 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                 TabBar(tabs: tabOpts),
                 Expanded(
                 child: TabBarView(children: [
-                  BankTab(),
-                  OtherWayTab(),
+                  InboxNotificationTab(),
+                  OffersNotificationTab(),
               
               
                 ]),
