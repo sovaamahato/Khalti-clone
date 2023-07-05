@@ -38,6 +38,7 @@ dependencies:
   persistent_bottom_nav_bar: 
   carousel_slider: ^4.2.1
   search_page: ^2.3.0
+  mobile_scanner: ^3.3.0
 
 dev_dependencies:
   flutter_test:

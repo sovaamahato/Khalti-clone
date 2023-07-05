@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khalti_clone/Pages/qr/qr_page.dart';
 import 'menu.dart';
 import 'transactions.dart';
 
@@ -32,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return [
       DashBoard(),
       Support(),
-      DashBoard(),
+      QRPage(),
       Transactions(),
       Menu(),
     ];
