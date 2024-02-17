@@ -47,5 +47,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+<!-- added by me for permissions from user -->
+	<key>NSPhotoLibraryUsageDescription</key>
+<string>This app requires to save your images user gallery</string>
+<key>NSCameraUsageDescription</key>
+<string>To capture profile photo plz grant camera access</string>
+
 </dict>
 </plist>

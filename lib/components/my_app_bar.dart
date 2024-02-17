@@ -42,6 +42,9 @@ class _MyAppBarState extends State<MyAppBar> {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
+              SizedBox(
+                height: 25,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -133,10 +136,10 @@ class _MyAppBarState extends State<MyAppBar> {
                         width: 12,
                       ),
                       GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)
-                          {
-                           return  NotificationPage();
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) {
+                            return NotificationPage();
                           }));
                         },
                         child: Icon(
@@ -150,7 +153,7 @@ class _MyAppBarState extends State<MyAppBar> {
                 ],
               ),
               SizedBox(
-                height: 35,
+                height: 25,
               ),
               //balance dekhaune row---------
               Row(
@@ -207,9 +210,9 @@ class _MyAppBarState extends State<MyAppBar> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
+                                  // SizedBox(
+                                  //   height: 8,
+                                  // ),
                                   GestureDetector(
                                     onTap: ShowNum,
                                     child: Row(
@@ -299,15 +302,16 @@ class _MyAppBarState extends State<MyAppBar> {
                   ),
                   GestureDetector(
                     onTap: () {
-                            
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
                         return SendMoneyPage();
-                      }));},
-                         
+                      }));
+                    },
                     child: Container(
-                      height: 90,
-                      width: width > 400 ? 90 : 55,
+                      //color: Colors.red,
+
+                      height: 95,
+                      width: width > 400 ? 100 : 60,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -335,8 +339,10 @@ class _MyAppBarState extends State<MyAppBar> {
                                   : const EdgeInsets.only(left: 10.0),
                               child: Text(
                                 " Send Money",
-                                style:
-                                    TextStyle(fontSize: 13, color: Colors.white),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                    fontSize: 13, color: Colors.white),
                               ),
                             ),
                           )

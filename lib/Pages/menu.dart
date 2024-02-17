@@ -12,81 +12,45 @@ class Menu extends StatelessWidget {
       "Khalti Quiz",
       "Play khalti Quiz & win exciting prizes everyday"
     ],
-    [
-      Icons.attach_money_outlined,
-      "My Payments",
-      "View Your saved payments"
-    ],
+    [Icons.attach_money_outlined, "My Payments", "View Your saved payments"],
     [
       Icons.question_mark_outlined,
       "My Saved Accounts",
       "View your linked & saved accounts"
     ],
-    [
-      Icons.question_mark_outlined,
-      "My Bookings",
-      "view your bookings history"
-    ],
+    [Icons.question_mark_outlined, "My Bookings", "view your bookings history"],
     [
       Icons.question_mark_outlined,
       "Cashback & Offers",
       "Recent Offers,Khalti Points & Cashbacks"
     ],
-    [
-      Icons.poll_outlined,
-      "Transaction Limits",
-      "view your transaction limits"
-    ],
-    [
-      Icons.phone_in_talk_sharp,
-      "Help & Support",
-      "Customer Support & FAQs"
-    ],
+    [Icons.poll_outlined, "Transaction Limits", "view your transaction limits"],
+    [Icons.phone_in_talk_sharp, "Help & Support", "Customer Support & FAQs"],
     [
       Icons.airplane_ticket_outlined,
       "Coupen",
       "Redeem promocode & get Khalti balance"
     ],
-   
-    
   ];
 
-    List listTileItems2 = [
-        [
-      Icons.person_add,
-      "Refer Consumer & Earn",
-      "Add & view consumer earnings"
-    ],
+  List listTileItems2 = [
+    [Icons.person_add, "Refer Consumer & Earn", "Add & view consumer earnings"],
     [
       Icons.playlist_add_check_circle_outlined,
       "Khalti Points",
       "Redeem Khalti Points for various offers"
     ],
-     [
+    [
       Icons.settings_outlined,
       "Settings",
       "Accounts,Security, Payments,Notifications,Language,External Links & General"
     ],
-
-    ];
-    List listTileItems3 = [
-        [
-      Icons.info_outline_rounded,
-      "About Khalti",
-      "Know more about us"
-    ],
-    [
-      Icons.download,
-      "Check for Updates",
-      "Spp version 3.19.00"
-    ],
-     [
-      Icons.login_outlined,
-      "Logout",
-      "Logout from your Khalti account"
-    ],
-
-    ];
+  ];
+  List listTileItems3 = [
+    [Icons.info_outline_rounded, "About Khalti", "Know more about us"],
+    [Icons.download, "Check for Updates", "Spp version 3.19.00"],
+    [Icons.login_outlined, "Logout", "Logout from your Khalti account"],
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -121,12 +85,14 @@ class Menu extends StatelessWidget {
                   height: 140,
                   width: MediaQuery.of(context).size.width * 0.35,
                   color: Colors.amber,
-                  child: Image.asset("lib/images/no_profile.jpg",
-                  fit: BoxFit.cover,),
+                  child: Image.asset(
+                    "lib/images/no_profile.jpg",
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.60,
-                  height: 140,
+                  height: 150,
                   child: Column(
                     children: [
                       ListTile(
@@ -309,10 +275,17 @@ class Menu extends StatelessWidget {
                 itemCount: listTileItems.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    leading: Icon(listTileItems[index][0],color: Colors.purple,),
+                    leading: Icon(
+                      listTileItems[index][0],
+                      color: Colors.purple,
+                    ),
                     title: Text(listTileItems[index][1]),
                     subtitle: Text(listTileItems[index][2]),
-                    trailing: Icon(Icons.arrow_forward_ios,size: 20,color: Colors.purple,),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 20,
+                      color: Colors.purple,
+                    ),
                   );
                 }),
           ),
@@ -335,10 +308,17 @@ class Menu extends StatelessWidget {
                 itemCount: listTileItems2.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    leading: Icon(listTileItems2[index][0],color: Colors.purple,),
+                    leading: Icon(
+                      listTileItems2[index][0],
+                      color: Colors.purple,
+                    ),
                     title: Text(listTileItems2[index][1]),
                     subtitle: Text(listTileItems2[index][2]),
-                    trailing: Icon(Icons.arrow_forward_ios,size: 20,color: Colors.purple,),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 20,
+                      color: Colors.purple,
+                    ),
                   );
                 }),
           ),
@@ -362,10 +342,17 @@ class Menu extends StatelessWidget {
                 itemCount: listTileItems3.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    leading: Icon(listTileItems3[index][0],color: Colors.purple,),
+                    leading: Icon(
+                      listTileItems3[index][0],
+                      color: Colors.purple,
+                    ),
                     title: Text(listTileItems3[index][1]),
                     subtitle: Text(listTileItems3[index][2]),
-                    trailing: Icon(Icons.arrow_forward_ios,size: 20,color: Colors.purple,),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 20,
+                      color: Colors.purple,
+                    ),
                   );
                 }),
           ),

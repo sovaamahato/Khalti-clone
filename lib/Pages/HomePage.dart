@@ -8,8 +8,6 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'dashborad.dart';
 import 'support.dart';
 
-
-
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -39,6 +37,12 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
   }
 
+  // Future _qrScanner() async {
+  //   String? qrData = await sacnner.scan();
+  //   print(qrData);
+  //   //String? qrdataPhone = await sacnner.scanPhoto();
+  // }
+
   List<PersistentBottomNavBarItem> _navBarItem() {
     return [
       PersistentBottomNavBarItem(
@@ -59,17 +63,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.grey.shade100,
                 )
               : Container(
-
-                child: Icon(
+                  child: Icon(
                     Icons.qr_code,
                     size: 30,
                     color: Colors.grey.shade600,
                   ),
-              ),
+                ),
           title: "Scan & pay",
-          
           activeColorPrimary: Colors.purple),
-          
       PersistentBottomNavBarItem(
           icon: Icon(Icons.note_alt),
           title: "Transactions",

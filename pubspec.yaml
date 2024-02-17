@@ -39,6 +39,8 @@ dependencies:
   carousel_slider: ^4.2.1
   search_page: ^2.3.0
   mobile_scanner: ^3.3.0
+  
+  permission_handler: ^11.3.0
 
 dev_dependencies:
   flutter_test:
