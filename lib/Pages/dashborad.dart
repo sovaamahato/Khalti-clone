@@ -104,8 +104,9 @@ class _DashBoardState extends State<DashBoard> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(4)),
                     child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset("lib/images/card.jpg")),
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset("lib/images/card.jpg"),
+                    ),
                   ),
 
                   //instead of sized box to give color
